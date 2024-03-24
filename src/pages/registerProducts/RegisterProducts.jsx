@@ -2,7 +2,11 @@ import React from "react";
 import CompForm from "../../components/compForm/CompForm";
 
 const RegisterProducts = () => {
-  return <CompForm />;
+  return (
+    <section>
+      <CompForm />
+    </section>
+  );
 };
 
 export default RegisterProducts;

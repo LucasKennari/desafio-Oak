@@ -3,6 +3,7 @@ import React from "react";
 import CompInputForn from "../compInput/CompInputForn";
 import styles from "./compForm.module.css";
 import CompBtnForm from "../compButton/CompBtnForm";
+import { useNavigate } from "react-router-dom";
 
 const inputInterface = [
   {
@@ -24,6 +25,7 @@ const inputInterface = [
 ];
 
 const CompForm = () => {
+  const navigate = useNavigate();
   //   const [produto, setProduto] = React.useState;
   //   const [descricao, setDescricao] = React.useState;
   //   const [valor, setValor] = React.useState;
@@ -31,6 +33,8 @@ const CompForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    navigate("/listProducts");
   }
 
   return (
