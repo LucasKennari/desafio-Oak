@@ -1,7 +1,8 @@
 import React from "react";
-import CompButtonForm from "../compButton/CompButtonForm";
+
 import CompInputForn from "../compInput/CompInputForn";
 import styles from "./compForm.module.css";
+import CompBtnForm from "../compButton/CompBtnForm";
 
 const inputInterface = [
   {
@@ -50,7 +51,7 @@ const CompForm = () => {
           <button className={styles.btnNo}>Não</button>
         </div>
         <div>
-          <CompButtonForm>Cadastrar Produto</CompButtonForm>
+          <CompBtnForm>Cadastrar Produto</CompBtnForm>
         </div>
       </form>
     </div>
