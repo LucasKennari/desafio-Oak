@@ -1,0 +1,10 @@
+.form {
+  border: 1px solid red;
+}
+
+.btnYes {
+  background-color: #008000;
+}
+.btnNo {
+  background-color: #ff0000ce;
+}
