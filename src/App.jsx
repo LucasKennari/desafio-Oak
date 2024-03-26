@@ -5,14 +5,16 @@ import Header from "./components/header/Header";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" end element={<RegisterProducts />} />
-        <Route path="/registerProd" end element={<RegisterProducts />} />
-        {/* <Route path="/sobre" end element={<RegisterProducts />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/registerProducts" end element={<RegisterProducts />} />
+          {/* <Route path="/registerProd" end element={<RegisterProducts />} /> */}
+          {/* <Route path="/sobre" end element={<RegisterProducts />} /> */}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

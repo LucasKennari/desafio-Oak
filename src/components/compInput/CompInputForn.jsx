@@ -5,7 +5,12 @@ const CompInputForn = ({ id, text, name }) => {
     <div>
       <label htmlFor={id}>
         {text}
-        <input type="text" id={id} name={name} />
+        <input
+          type="text"
+          id={id}
+          name={name}
+          onChange={({ target }) => target.value}
+        />
       </label>
     </div>
   );

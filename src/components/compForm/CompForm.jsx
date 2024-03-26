@@ -7,34 +7,44 @@ import { useNavigate } from "react-router-dom";
 
 const inputInterface = [
   {
-    id: "produto",
+    id: produto,
     name: "Nome do produto:",
   },
   {
-    id: "descricao",
+    id: descricao,
     name: "Descricão do produto:",
   },
   {
-    id: "valor",
-    name: "valor do produto:",
+    id: valor,
+    name: "Valor do produto:",
   },
   {
-    id: "disponivel",
+    id: disponivel,
     name: "Disponivel para venda",
   },
 ];
+let data = [];
 
 const CompForm = () => {
   const navigate = useNavigate();
-  //   const [produto, setProduto] = React.useState;
-  //   const [descricao, setDescricao] = React.useState;
-  //   const [valor, setValor] = React.useState;
-  //   const [disponivel, setDisponivel] = React.useState;
+
+  const [produto, setProduto] = React.useState(null);
+  const [descricao, setDescricao] = React.useState(null);
+  const [valor, setValor] = React.useState(null);
+  const [disponivel, setDisponivel] = React.useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    navigate("/listProducts");
+    data = {
+      produto: produto,
+      descricao: descricao,
+      valor: valor,
+      disponivel: disponivel,
+    };
+
+    console.log(e.target.value);
+    // navigate("/listProducts");
   }
 
   return (
@@ -44,7 +54,7 @@ const CompForm = () => {
           {inputInterface.map(({ id, name }) => {
             return (
               <li key={id}>
-                <CompInputForn text={name} id={id} />
+                <CompInputForn text={name} id={id} value={valor} />
               </li>
             );
           })}

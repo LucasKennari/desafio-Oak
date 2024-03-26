@@ -1,5 +1,8 @@
 .form {
-  border: 1px solid red;
+  border: 1px solid aliceblue;
+  background-color: rgb(22, 22, 22);
+  padding: 10%;
+  border-radius: 15px;
 }
 
 .btnYes {

@@ -3,9 +3,9 @@ import CompForm from "../../components/compForm/CompForm";
 
 const RegisterProducts = () => {
   return (
-    <section>
+    <main>
       <CompForm />
-    </section>
+    </main>
   );
 };
 
