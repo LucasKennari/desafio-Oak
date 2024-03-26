@@ -1,7 +1,7 @@
 .form {
   border: 1px solid aliceblue;
   background-color: rgb(22, 22, 22);
-  padding: 10%;
+  padding: 10% 5%;
   border-radius: 15px;
 }
 
@@ -10,4 +10,12 @@
 }
 .btnNo {
   background-color: #ff0000ce;
+}
+
+.btnDisponivel {
+  margin-top: 1rem;
+}
+
+.btnCadastrarProd {
+  margin-top: 0.6rem;
 }

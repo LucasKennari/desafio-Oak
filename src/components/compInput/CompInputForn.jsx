@@ -1,18 +1,12 @@
 import React from "react";
 
-const CompInputForn = ({ id, text, name }) => {
+const CompInputForn = ({ id, label, onChange, value }) => {
   return (
-    <div>
-      <label htmlFor={id}>
-        {text}
-        <input
-          type="text"
-          id={id}
-          name={name}
-          onChange={({ target }) => target.value}
-        />
-      </label>
-    </div>
+    <>
+      <label htmlFor={id}></label>
+      {label}
+      <input type="text" id={id} name={id} value={value} onChange={onChange} />
+    </>
   );
 };
 

@@ -9,8 +9,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/registerProducts" end element={<RegisterProducts />} />
-          {/* <Route path="/registerProd" end element={<RegisterProducts />} /> */}
+          <Route path="/registerProducts" element={<RegisterProducts />} />
+          <Route path="/products" element={<RegisterProducts />} />
           {/* <Route path="/sobre" end element={<RegisterProducts />} /> */}
         </Routes>
       </BrowserRouter>
