@@ -1,20 +1,18 @@
 import React from "react";
+import ProductsItem from "./productsItem/ProductsItem";
 
 const Products = () => {
   const [itens, setItens] = React.useState(null);
-  const data = window.localStorage.getItem("produtos6");
+  const data = window.localStorage.getItem("produtos");
   const produtos = JSON.parse(data);
-  console.log(typeof produtos);
 
   return (
     <div>
-      {produtos.map(({ produto, descricao, valor, disponivel }) => {
+      {produtos.map((item) => {
         return (
-          <ul key={produto}>
-            <li key={produto}>{produto}</li>
-            <li key={produto}>{valor}</li>
-            <li key={produto}>{disponivel}</li>
-          </ul>
+          <li key={item.produto}>
+            <ProductsItem {...item} />
+          </li>
         );
       })}
     </div>

@@ -5,6 +5,7 @@ import styles from "./compForm.module.css";
 import CompBtnForm from "../compButton/CompBtnForm";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../customHooks/useForm/useForm";
+import addItemLocalStorage from "./addItemLocalStorage";
 
 const data = [];
 
@@ -41,16 +42,16 @@ const CompForm = () => {
     e.preventDefault();
 
     data.push({
+      id: 0,
       produto: produto.value,
       descricao: descricao.value,
       valor: valor.value,
       disponivel: disponivel,
     });
 
-    window.localStorage.clear();
-
     let produtoJson = JSON.stringify(data);
-    window.localStorage.setItem("produtos6", produtoJson);
+
+    addItemLocalStorage(produtoJson);
 
     navigate("/products");
   }
@@ -58,7 +59,6 @@ const CompForm = () => {
   function handleClick(e) {
     e.preventDefault();
     setDisponivel(e.target.innerText);
-    console.log(disponivel);
   }
 
   return (
