@@ -5,11 +5,15 @@
   padding: 3%;
   color: aliceblue;
   border-radius: 7px;
-  background-color: rgb(20, 20, 20);
+  background-color: #141414;
 }
 
 .header a:hover {
   background-color: aliceblue;
   color: #141414;
   border: 1px solid #46464638;
+}
+
+.active {
+  color: aliceblue;
 }

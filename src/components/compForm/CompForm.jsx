@@ -5,15 +5,17 @@ import styles from "./compForm.module.css";
 import CompBtnForm from "../compButton/CompBtnForm";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../customHooks/useForm/useForm";
-let data = [];
+
+const data = [];
 
 const CompForm = () => {
   const navigate = useNavigate();
+  let [disponivel, setDisponivel] = React.useState("");
 
   let produto = useForm();
   let valor = useForm();
   let descricao = useForm();
-  console.log(produto.value);
+
   const inputInterface = [
     {
       id: "produto",
@@ -38,15 +40,25 @@ const CompForm = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // data = {
-    //   produto: produto,
-    //   descricao: descricao,
-    //   valor: valor,
-    //   disponivel: disponivel,
-    // };
+    data.push({
+      produto: produto.value,
+      descricao: descricao.value,
+      valor: valor.value,
+      disponivel: disponivel,
+    });
 
-    console.log(e.target.value);
-    // navigate("/listProducts");
+    window.localStorage.clear();
+
+    let produtoJson = JSON.stringify(data);
+    window.localStorage.setItem("produtos6", produtoJson);
+
+    navigate("/products");
+  }
+
+  function handleClick(e) {
+    e.preventDefault();
+    setDisponivel(e.target.innerText);
+    console.log(disponivel);
   }
 
   return (
@@ -66,11 +78,16 @@ const CompForm = () => {
             );
           })}
         </div>
+
         <div className={styles.btnDisponivel}>
           <label htmlFor="">
             Disponivel para venda:
-            <button className={styles.btnYes}>Sim</button>
-            <button className={styles.btnNo}>Não</button>
+            <button className={styles.btnYes} onClick={handleClick}>
+              Sim
+            </button>
+            <button className={styles.btnNo} onClick={handleClick}>
+              Não
+            </button>
           </label>
         </div>
         <div className={styles.btnCadastrarProd}>
